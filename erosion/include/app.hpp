@@ -4,6 +4,10 @@
 #include "node.hpp"
 #include "renderer.hpp"
 
+namespace Renderer {
+  class Window;
+}
+
 namespace Engine {
   class App: public Node {
   public:
@@ -11,8 +15,8 @@ namespace Engine {
     static App& get() { return instance; }
 
     void update_callback() override;
-    
-    Renderer::Shader* defaultShader;
+
+    Renderer::Window* currentContext;
     
     ~App();
   private:

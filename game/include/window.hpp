@@ -9,6 +9,7 @@ namespace User {
 
     void update_callback() override;
     
-    Renderer::Window* window;
+    std::shared_ptr<Renderer::Window> window;
+    uint windowID;
   };
 };

@@ -1,7 +1,7 @@
 #include "shader.hpp"
 
 namespace Renderer {    
-  Shader::Shader(const char* vertexPath, const char* fragmentPath) {
+  void Shader::load(const char* vertexPath, const char* fragmentPath) {
     // 1. retrieve the vertex/fragment source code from filePath
     std::string vertexCode;
     std::string fragmentCode;
@@ -53,16 +53,11 @@ namespace Renderer {
     // delete the shaders as they're linked into our program now and no longer necessary
     glDeleteShader(vertex);
     glDeleteShader(fragment);
-    std::cout << "init ID: " << ID << "\n";
   }
 
   // activate the shader
   void Shader::use() {
-    Log::info("use began");
-    std::cout << "use ID: " << ID << "\n";
-    Log::info("use started");
     glUseProgram(ID);
-    Log::info("use passed");
   }
 
   // utility uniform functions

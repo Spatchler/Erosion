@@ -35,7 +35,7 @@ namespace Renderer {
   public:
     Mesh(std::vector<Vertex> p_vertices, std::vector<uint> p_indices, std::vector<Texture> p_textures);
 
-    void draw(Shader* shader);
+    void draw(Shader& shader);
 
     // Mesh data
     std::vector<Vertex>  vertices;

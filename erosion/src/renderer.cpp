@@ -35,10 +35,13 @@ namespace Renderer {
             Log::err("Failed to initialize GLAD");
         }
         glEnable(GL_DEPTH_TEST);
+
+        shader.load("game/res/shaders/default.vs", "game/res/shaders/default.fs");
     }
 
     void Window::update_callback() {
         glfwMakeContextCurrent(glfwWindow);
+        Engine::App::get().currentContext = this;
 
         // Check close event
         if (glfwWindowShouldClose(glfwWindow)) {

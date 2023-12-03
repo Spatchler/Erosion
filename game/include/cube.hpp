@@ -9,6 +9,7 @@ namespace User {
 
     void update_callback() override;
     
-    Renderer::Model* cube;
+    std::shared_ptr<Renderer::Model> model;
+    uint modelID;
   };
 };

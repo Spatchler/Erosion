@@ -70,7 +70,8 @@ project "game"
     }
 
     postbuildcommands {
-        "cp -r game/res game/bin/" .. outputdir
+        "cp -r game/res game/bin/" .. outputdir,
+        "cp -r erosion/res game/bin/" .. outputdir
     }
 
 project "erosion"
@@ -111,6 +112,5 @@ project "erosion"
 
     postbuildcommands {
         "cp -r erosion/res erosion/bin/" .. outputdir,
-        "cp -r erosion/res game/bin/" .. outputdir
     }
 

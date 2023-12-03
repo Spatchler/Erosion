@@ -14,10 +14,12 @@ namespace Renderer {
   class Shader {
   public:
       // constructor generates the shader on the fly
-      Shader(const char* vertexPath, const char* fragmentPath);
+      Shader() {}
+
+      void load(const char* vertexPath, const char* fragmentPath);
 
       // activate the shader
-      void use() ;
+      void use();
 
       // utility uniform functions
       void setBool(const std::string &name, bool value) const;

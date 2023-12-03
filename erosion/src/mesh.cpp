@@ -6,11 +6,8 @@ namespace Renderer {
     setupMesh();
   }
         
-  void Mesh::draw(Shader* shader) {
-    std::cout << "mesh running use" << "\n";
-    std::cout << shader->ID << "\n";
-    shader->use();
-    std::cout << "mesh finished use" << "\n";
+  void Mesh::draw(Shader& shader) {
+    shader.use();
     // bind appropriate textures
     uint diffuseNr, specularNr, normalNr, heightNr = 1;
     for(uint i = 0; i < textures.size(); i++) {
@@ -28,7 +25,7 @@ namespace Renderer {
         number = std::to_string(heightNr++); // transfer uint to string
 
       // now set the sampler to the correct texture unit
-      glUniform1i(glGetUniformLocation(shader->ID, (name + number).c_str()), i);
+      glUniform1i(glGetUniformLocation(shader.ID, (name + number).c_str()), i);
       // and finally bind the texture
       glBindTexture(GL_TEXTURE_2D, textures[i].id);
     }

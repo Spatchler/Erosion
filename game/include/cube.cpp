@@ -2,8 +2,7 @@
 
 namespace User {
   Cube::Cube(const std::string& path)
-  :cube(new Renderer::Model(path)) {
-    this->attach(cube);
+  :model(new Renderer::Model(path)), modelID(this->attach<Renderer::Model>(model)){
   }
 
   void Cube::update_callback() {

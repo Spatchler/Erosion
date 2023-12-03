@@ -9,7 +9,7 @@ namespace Engine {
   }
 
   void App::update_callback() {
-    active = nodes.size() > 0;
+    active = activeNodes.size() > 0;
   }
 
   App::~App() {

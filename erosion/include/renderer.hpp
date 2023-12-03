@@ -41,6 +41,8 @@ namespace Renderer {
     bool shouldClose;
 
     math::vec2<int> size;
+
+    Shader shader;
     
     ~Window();
   private:

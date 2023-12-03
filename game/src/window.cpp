@@ -2,8 +2,7 @@
 
 namespace User {
   Window::Window(const char* p_title)
-  :window(new Renderer::Window(p_title)) {
-    this->attach(window);
+  :window(new Renderer::Window(p_title)), windowID(this->attach<Renderer::Window>(window)) {
   }
 
   void Window::update_callback() {

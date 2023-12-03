@@ -40,14 +40,14 @@ namespace Renderer {
 
     // constructor, expects a filepath to a 3D model.
     Model::Model(const std::string& path, bool gamma)
-    :gammaCorrection(gamma), shader(Engine::App::get().defaultShader) {
+    :gammaCorrection(gamma) {
         loadModel(path);
     }
   
     // draws the model, and thus all its meshes
     void Model::update_callback() {
         for(uint i = 0; i < meshes.size(); ++i)
-            meshes[i].draw(shader);
+            meshes[i].draw(Engine::App::get().currentContext->shader);
     }
       
     // loads a model with supported ASSIMP extensions from file and stores the resulting meshes in the meshes vector.
